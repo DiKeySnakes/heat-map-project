@@ -87,9 +87,9 @@ const createCells = () => {
     .attr('x', (item) => {
       return xScale(item['year']);
     })
-    .on('mouseover', (item) => {
+    .on('mouseover', (e) => {
+      const target = e.target;
       tooltip.transition().style('visibility', 'visible');
-
       const monthNames = [
         'January',
         'February',
@@ -104,18 +104,14 @@ const createCells = () => {
         'November',
         'December',
       ];
-
       tooltip.text(
-        item['year'] +
-          ' ' +
-          monthNames[item['month'] - 1] +
-          ' : ' +
-          item['variance']
+        `${target.dataset.year}, ${monthNames[target.dataset.month - 1]} : ${
+          target.dataset.temp
+        }`
       );
-
-      tooltip.attr('data-year', item['year']);
+      tooltip.attr('data-year', target.dataset.year);
     })
-    .on('mouseout', (item) => {
+    .on('mouseout', () => {
       tooltip.transition().style('visibility', 'hidden');
     });
 };
@@ -148,8 +144,6 @@ req.onload = () => {
   const data = JSON.parse(req.responseText);
   baseTemp = data.baseTemperature;
   values = data.monthlyVariance;
-  console.log(baseTemp);
-  console.log(values);
   createSvg();
   generateScales();
   createCells();
