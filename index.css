@@ -1,0 +1,82 @@
+:root {
+  --main-white: rgba(240, 240, 240, 1);
+  --main-black: rgba(0, 0, 0, 1);
+  --main-gray: rgba(48, 56, 65, 1);
+  --main-navy: rgba(0, 0, 128, 0.7);
+  --main-navy-light: rgba(0, 0, 128, 0.5);
+  --secondary-white: rgba(220, 220, 220, 1);
+  --main-red: rgba(190, 49, 68, 1);
+  --main-beige: rgba(202, 173, 114, 1);
+  --main-yellow: rgba(255, 225, 0, 1);
+  --main-orange: rgba(255, 145, 0, 1);
+  --main-blue: hsla(222, 29%, 38%, 0.9);
+  --main-light-blue: rgba(83, 158, 208, 1);
+  --main-ultramarine: rgba(0, 246, 255, 1);
+  --main-light-green: rgba(101, 231, 101, 1);
+  --main-light-gray: hsla(238, 8%, 62%, 1);
+  --main-text-shadow: 0.5rem 0.5rem 0.25rem rgba(0, 0, 0, 0.75);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--secondary-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+svg {
+  background-color: var(--main-white);
+  box-shadow: 2.5rem 2.5rem 1.25rem 0rem rgba(0, 0, 0, 0.35);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+#title {
+  margin-top: 3rem;
+  font-size: 1.8rem;
+  fill: var(--main-gray);
+}
+
+.cell {
+  position: relative;
+}
+
+.cell:hover {
+  stroke: var(--main-black);
+}
+
+g {
+  color: var(--main-gray);
+}
+
+#tooltip {
+  visibility: hidden;
+  width: calc(7rem + 2vmin);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--main-white);
+  text-align: center;
+  padding: 0.5rem 0;
+  border-radius: 0.2rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  z-index: 1;
+}
+
+#legend {
+  font-size: 1.1rem;
+  text-align: center;
+  width: 80%;
+  height: 2.8rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}

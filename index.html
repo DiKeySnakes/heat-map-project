@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heat Map Project</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script defer src="./index.js"></script>
+  </head>
+  <body>
+    <h1 id="title">Monthly Global Land-Surface Temperature</h1>
+    <h4 id="description">1753 - 2015: base temperature 8.66℃</h4>
+    <svg></svg>
+    <svg id="legend">
+      <g>
+        <rect
+          x="10"
+          y="0"
+          width="40"
+          height="40"
+          fill="rgba(83, 158, 208, 1)"
+          stroke="black"></rect>
+        <text x="60" y="25" fill="black">Variance of -1 or less</text>
+      </g>
+      <g>
+        <rect
+          x="340"
+          y="0"
+          width="40"
+          height="40"
+          fill="rgba(202, 173, 114, 1)"
+          stroke="black"></rect>
+        <text x="400" y="25" fill="black">On or Below Average</text>
+      </g>
+      <g>
+        <rect
+          x="685"
+          y="0"
+          width="40"
+          height="40"
+          fill="rgba(255, 225, 0, 1)"
+          stroke="black"></rect>
+        <text x="740" y="25" fill="black">Above Average</text>
+      </g>
+      <g>
+        <rect
+          x="975"
+          y="0"
+          width="40"
+          height="40"
+          fill="rgba(255, 145, 0, 1)"
+          stroke="black"></rect>
+        <text x="1030" y="25" fill="black">Variance of +1 or more</text>
+      </g>
+    </svg>
+  </body>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</html>
